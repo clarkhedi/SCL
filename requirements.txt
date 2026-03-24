@@ -1,0 +1,8 @@
+timm
+transformers
+fairscale
+pycocoevalcap
+nltk
+yaml
+opencv-python
+prettytable
