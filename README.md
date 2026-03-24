@@ -1,4 +1,4 @@
-# Cross-modal Shared Concept Learning for Text-to-Image Person Retrieval
+# SCL for Text-to-Image Person Retrieval
 
 ![main](doc/scl.png)
 
