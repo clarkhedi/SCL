@@ -1,6 +1,6 @@
 # Cross-modal Shared Concept Learning for Text-to-Image Person Retrieval
 
-![main](doc/model.png)
+![main](doc/scl.png)
 
 
 
