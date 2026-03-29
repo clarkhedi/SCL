@@ -36,7 +36,7 @@ class MLP_En(nn.Module):
         return x
 
 
-class SCP(nn.Module):
+class ACR(nn.Module):
     def __init__(self, d_model=512, vision_width=1024, text_width=768, mlp=False):
         super().__init__()
         self.concept_router = EfficientConceptRouter(d_model)
@@ -92,7 +92,7 @@ class SCP(nn.Module):
         return loss_scl_g
 
 
-class SCL(nn.Module):
+class SCRNet(nn.Module):
     def __init__(self,
                  med_config='configs/med_config.json',
                  image_size=224,
@@ -162,7 +162,7 @@ class SCL(nn.Module):
         if 'attr' in self.task:
             self.text_decoder = BertMLMLMHeadModel(config=med_config)
         if scl:
-            self.extra_encoder_layer = SCP(d_model=text_width, vision_width=vision_width, text_width=text_width, mlp=True)
+            self.extra_encoder_layer = ACR(d_model=text_width, vision_width=vision_width, text_width=text_width, mlp=True)
             for p in self.extra_encoder_layer.parameters():
                 if p.dim() > 1:
                     nn.init.xavier_uniform_(p)
