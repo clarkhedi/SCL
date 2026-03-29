@@ -1,4 +1,4 @@
-CUDA_VISIBLE_DEVICES=0,1,2,3,4 python -m torch.distributed.run --nproc_per_node=5 --master_port=25902 train.py \
+CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.run --nproc_per_node=2 --master_port=25902 train.py \
 --config ./configs/retrieval_cuhk.yaml \
 --output_dir output/CUHK \
 --max_epoch 40 \
